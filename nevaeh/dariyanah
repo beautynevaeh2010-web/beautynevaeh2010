@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Science Learning Hub</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f9ff;
+margin:0;
+}
+
+header{
+background:#1e90ff;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#0d6efd;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+padding:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:20px;
+border-radius:10px;
+box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+}
+
+button{
+background:#1e90ff;
+color:white;
+padding:10px;
+border:none;
+border-radius:5px;
+}
+
+</style>
+
+<script>
+
+let score = 0;
+
+function checkQuiz(){
+
+let answer = document.querySelector('input[name="q1"]:checked');
+
+if(answer.value == "b"){
+score++;
+alert("Correct! 🌟");
+}
+else{
+alert("Not quite. Try again!");
+}
+
+}
+
+function updateProgress(){
+
+let lessons = document.getElementById("lessonsDone").value;
+
+document.getElementById("progress").innerText =
+"You completed " + lessons + " lessons!";
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Science Learning Hub 🧪</h1>
+<p>Live Tutoring • Quizzes • Study Groups</p>
+</header>
+
+<nav>
+<a href="#schedule">Schedule</a>
+<a href="#quiz">Quiz</a>
+<a href="#lessons">Lessons</a>
+<a href="#videos">Videos</a>
+<a href="#dashboard">Dashboard</a>
+<a href="#downloads">Downloads</a>
+</nav>
+
+<section id="schedule">
+<div class="card">
+<h2>📅 Live Tutoring Schedule</h2>
+
+<ul>
+<li>Monday – Biology Help (4 PM)</li>
+<li>Wednesday – Chemistry Tutoring (5 PM)</li>
+<li>Friday – Physics Study Group (6 PM)</li>
+</ul>
+
+<p>Join our group study sessions to review science topics together!</p>
+</div>
+</section>
+
+<section id="quiz">
+<div class="card">
+<h2>❓ Science Quiz</h2>
+
+<p>What planet is known as the Red Planet?</p>
+
+<input type="radio" name="q1" value="a"> Earth<br>
+<input type="radio" name="q1" value="b"> Mars<br>
+<input type="radio" name="q1" value="c"> Venus<br>
+
+<br><br>
+
+<button onclick="checkQuiz()">Submit</button>
+
+</div>
+</section>
+
+<section id="lessons">
+<div class="card">
+<h2>📚 Science Lessons</h2>
+
+<ul>
+<li>Introduction to Cells</li>
+<li>Photosynthesis Explained</li>
+<li>Newton's Laws of Motion</li>
+<li>Basic Chemistry Reactions</li>
+</ul>
+
+</div>
+</section>
+
+<section id="videos">
+<div class="card">
+<h2>🎥 Learning Videos</h2>
+
+<iframe width="400" height="225"
+src="https://www.youtube.com/embed/H8WJ2KENlK0">
+</iframe>
+
+</div>
+</section>
+
+<section id="dashboard">
+<div class="card">
+<h2>📊 Learning Dashboard</h2>
+
+<p>Enter number of lessons completed:</p>
+
+<input type="number" id="lessonsDone">
+
+<button onclick="updateProgress()">Update Progress</button>
+
+<p id="progress"></p>
+
+</div>
+</section>
+
+<section id="downloads">
+<div class="card">
+<h2>📥 Downloadable Materials</h2>
+
+<ul>
+<li><a href="#">Biology Study Guide</a></li>
+<li><a href="#">Chemistry Notes</a></li>
+<li><a href="#">Physics Practice Problems</a></li>
+</ul>
+
+</div>
+</section>
+
+</body>
+</html>
